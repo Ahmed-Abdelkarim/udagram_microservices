@@ -86,3 +86,9 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+set_env.sh
+
+udagram-api/.dockerignore
+
+udagram-api/.eslintrc.json
