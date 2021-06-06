@@ -13,8 +13,9 @@ before_install:
     - sudo mv ./kubectl /usr/local/bin/kubectl
 install: 
     - docker-compose -f deployment/docker/docker-compose-build.yml build --parallel  
-    - docker-compose up
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push ahmedabdelkarim1/udagram-api-user:latest
-  - docker push ahmedabdelkarim1/udagram-api-feed:latest
+  - docker push ahmedabdelkarim1/udagram-api-user
+  - docker push ahmedabdelkarim1/udagram-api-feed
+  - docker push ahmedabdelkarim1/reverseproxy
+  - docker push ahmedabdelkarim1/udagram-frontend
