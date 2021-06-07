@@ -22,20 +22,20 @@ spec:
       containers:
       - image: ahmedabdelkarim1/udagram-api-user
         name: backend-user 
-        imagePullPolicy: Always  
+        imagePullPolicy: Always
         resources:
           requests:
             memory: "64Mi"
             cpu: "250m"
           limits:
             memory: "1024Mi"
-            cpu: "500m"      
+            cpu: "500m"
         env:
         - name: URL
           valueFrom:
             configMapKeyRef:
               name: env-config
-              key: URL 
+              key: URL
         - name: JWT_SECRET
           valueFrom:
             configMapKeyRef:
