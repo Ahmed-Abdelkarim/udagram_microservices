@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: backend-feed
+    app: backend-feed
   name: backend-feed
 spec:
   replicas: 1
@@ -13,7 +13,6 @@ spec:
     metadata:
       labels:
         app: backend-feed
-        service: backend-feed
     spec:
       volumes:
       - name: configmap-volume
@@ -77,9 +76,9 @@ spec:
               name: env-secret
               key: POSTGRES_USERNAME
         volumeMounts:
-        - name: aws-secret
-          mountPath: "/root/.aws/"
-          readOnly: true
+          - name: aws-secret
+            mountPath: "/root/.aws/"
+            readOnly: true
       restartPolicy: Always
       volumes:
       - name: aws-secret

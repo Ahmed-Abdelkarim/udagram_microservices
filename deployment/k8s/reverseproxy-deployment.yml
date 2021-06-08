@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: reverseproxy
+    app: reverseproxy
   name: reverseproxy
 spec:
   replicas: 1
@@ -13,7 +13,6 @@ spec:
     metadata:
       labels:
         app: reverseproxy
-        service: reverseproxy
     spec:
       containers:
       - image: ahmedabdelkarim1/reverseproxy
